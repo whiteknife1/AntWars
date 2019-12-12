@@ -1,0 +1,26 @@
+Names: John Eberling, Jacob Scriffiny
+File: design.txt
+AntWars File: Dark_Passengers.scala
+
+Our ant colony Dark_Passengers (inspired from hit TV-show "Dexter") implements a conservative economic design with strategic 
+defensive plays and offensive considerations. We implemented a total of five different kinds of ants. Three types of these ants 
+were designed to act offensively and/or defensively. The Doakes ant was designed solely offensively and his primary job was to 
+slay the enemy queen. The Lila ant was an offensive/defensive hybrid that was designed to create a dynamically-moving barricade 
+in a specified location on the game board with the option to hunt down the queen. The Batista ant was designed defensively and 
+his primary job was to statically defend. The other two types of ants were designed to economically sustain the colony. The Rita 
+ant was designed to collect food from various food piles on the game board and drop it in specified locations. The Harry Ant was 
+designed to collect food from Ritas’ drop-off areas and potentially from food-hubs around on the board.
+
+Our overall strategy composed of a set start with adaptive mid-to-late-game functionality. The start consisted of deploying a few 
+economic-based ants in order to gain an upper hand on food supply in the early stages of the game. Then our defensive ants were 
+deployed to defend the center-food hub and establish a barricade in front of the enemy’s nest. Once we entered mid-to-late game, 
+our strategy became adaptive to the number of ants alive in our colony and the size of our food supply. The potential options in 
+this phase of the game consisted of deploying more food-gatherers, deploying defense in front of our queen, and lastly, deploying 
+our highly-powered Doakes ant to win us the game with a flanking maneuver.
+
+In terms of Inheritance, we specified two abstract classes: SerialKillers and Family. The Doakes, Lila, and Batista classes extended 
+the SerialKillers abstract class, while the Rita and Harry classes extended the Family abstract class. The SerialKillers class offered 
+the three offensive/defensive ants the options to set up a barricade, hunt down the queen, and logic to locate enemy. This allowed the 
+three ants to share the same hunting code if necessary, in addition to having the flexibility to establish defensive positioning. The 
+Family class defined the general movements for the Rita and Harry ants and the logic for collecting food. These two ants were divided 
+into two different classes due to the differences in the ants’ purpose in the game.
